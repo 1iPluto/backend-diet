@@ -1,0 +1,71 @@
+{
+  "name": "backend-diet",
+  "version": "1.0.0",
+  "description": "Scan your source code, find heavy library usage, and get native alternatives with code snippets — right in your terminal.",
+  "author": "Marwan Said <1iPluto@github>",
+  "license": "MIT",
+  "homepage": "https://github.com/1iPluto/backend-diet#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/1iPluto/backend-diet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1iPluto/backend-diet/issues"
+  },
+  "keywords": [
+    "cli",
+    "nodejs",
+    "ast",
+    "bundle-size",
+    "developer-tools",
+    "npm",
+    "dependencies",
+    "performance",
+    "babel",
+    "tree-shaking"
+  ],
+  "bin": {
+    "backend-diet": "./bin/backend-diet.js"
+  },
+  "main": "./dist/cli.js",
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node bin/backend-diet.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.29.2",
+    "@babel/traverse": "^7.29.0",
+    "@babel/types": "^7.29.0",
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "cli-table3": "^0.6.5",
+    "commander": "^14.0.3",
+    "fast-glob": "^3.3.3",
+    "gradient-string": "^3.0.0",
+    "ora": "^9.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^25.5.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}
